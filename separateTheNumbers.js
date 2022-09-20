@@ -4,20 +4,18 @@ function separateNumbers(s) {
     return;
   }
 
-  for (var i = 1; i <= Math.floor(s.length / 2); i++) {
+  for (let i = 1; i <= Math.floor(s.length / 2); i++) {
     let first = s.slice(0, i);
     let finalStr = '';
 
-    for (var j = 0; j <= s.length; j++) {
+    for (let j = 0; j <= s.length; j++) {
       finalStr = finalStr + (BigInt(first) + BigInt(j));
       if (finalStr.length >= s.length) {
         break;
       }
     }
 
-    let finalTest = finalStr === s;
-
-    if (finalTest) {
+    if (finalStr === s) {
       console.log('YES' + ' ' + first);
       return;
     }
